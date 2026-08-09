@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!serviceType || !totalKlimaPrice) return;
 
         const baseOption = serviceType.options[serviceType.selectedIndex];
-        let basePrice = parseInt(baseOption.getAttribute('data-price')) || 899;
+        let basePrice = parseInt(baseOption.getAttribute('data-price')) || 1850;
 
         let btuFee = 0;
         const btuVal = klimaBtu?.value || '9000-12000';
