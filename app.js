@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const finalPrice = totalKlimaPrice.textContent;
 
             const message = `Merhaba Nova Klima, web siteniz üzerinden ulaştım. Antalya Klima Servis talebim var:\n\n🔧 Servis Türü: ${servText}\n❄️ Kapasite: ${btuText}\n📍 Konum: ${distText}\n💰 En Uygun Ücret: ${finalPrice}\n\nAcil usta yönlendirmenizi rica ederim.`;
-            const waUrl = `https://wa.me/905300000000?text=${encodeURIComponent(message)}`;
+            const waUrl = `https://wa.me/905070871789?text=${encodeURIComponent(message)}`;
 
             window.open(waUrl, '_blank');
         });
