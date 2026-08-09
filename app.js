@@ -1,6 +1,4 @@
-/* ═══════════════════════════════════════════════════════════
-   NOVA KLİMA SERVİSİ - INTERACTIVE LOGIC (ANTALYA)
-   ═══════════════════════════════════════════════════════════ */
+/* NOVA KLİMA SERVİSİ - INTERACTIVE LOGIC (ANTALYA) */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -14,18 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!serviceType || !totalKlimaPrice) return;
 
         const baseOption = serviceType.options[serviceType.selectedIndex];
-        let basePrice = parseInt(baseOption.getAttribute('data-price')) || 1200;
+        let basePrice = parseInt(baseOption.getAttribute('data-price')) || 899;
 
         let btuFee = 0;
         const btuVal = klimaBtu?.value || '9000-12000';
-        if (btuVal === '18000') btuFee = 300;
-        else if (btuVal === '24000') btuFee = 500;
-        else if (btuVal === 'ticari') btuFee = 1000;
+        if (btuVal === '18000') btuFee = 250;
+        else if (btuVal === '24000') btuFee = 400;
+        else if (btuVal === 'ticari') btuFee = 800;
 
         let distFee = 0;
         const distVal = districtSelect?.value || 'muratpasa';
-        if (distVal === 'dosemealti') distFee = 300;
-        else if (distVal === 'diğer') distFee = 500;
+        if (distVal === 'dosemealti') distFee = 200;
+        else if (distVal === 'diğer') distFee = 400;
 
         const totalPrice = basePrice + btuFee + distFee;
         totalKlimaPrice.textContent = `${totalPrice.toLocaleString('tr-TR')} TL`;
@@ -44,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const distText = districtSelect.options[districtSelect.selectedIndex].text;
             const finalPrice = totalKlimaPrice.textContent;
 
-            const message = `Merhaba Nova Klima, web siteniz üzerinden ulaştım. Antalya Klima Servis talebim var:\n\n🔧 Servis Türü: ${servText}\n❄️ Kapasite: ${btuText}\n📍 Konum: ${distText}\n💰 Şeffaf Ücret: ${finalPrice}\n\nAcil usta yönlendirmenizi rica ederim.`;
+            const message = `Merhaba Nova Klima, web siteniz üzerinden ulaştım. Antalya Klima Servis talebim var:\n\n🔧 Servis Türü: ${servText}\n❄️ Kapasite: ${btuText}\n📍 Konum: ${distText}\n💰 En Uygun Ücret: ${finalPrice}\n\nAcil usta yönlendirmenizi rica ederim.`;
             const waUrl = `https://wa.me/905300000000?text=${encodeURIComponent(message)}`;
 
             window.open(waUrl, '_blank');
