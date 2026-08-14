@@ -448,58 +448,61 @@ img {
 }
 
 /* ==========================================================================
-   CALCULATOR CARD (HERO RIGHT)
+   CALCULATOR CARD (HERO RIGHT — COMPACT -15%)
    ========================================================================== */
 .hero-calc-wrapper {
     background: var(--color-surface);
     border-radius: var(--radius-lg);
-    padding: 28px;
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25);
+    padding: 20px 22px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: var(--color-text);
+    max-width: 440px;
+    margin-left: auto;
 }
 
 .calc-top {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     text-align: left;
 }
 
 .calc-tag {
     display: inline-block;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 800;
     color: var(--color-orange);
     background: var(--color-orange-light);
     border: 1px solid var(--color-orange-border);
-    padding: 3px 8px;
+    padding: 2px 7px;
     border-radius: 4px;
     letter-spacing: 0.05em;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .calc-top h3 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: var(--color-navy);
-    margin-bottom: 2px;
+    margin-bottom: 1px;
+    line-height: 1.2;
 }
 
 .calc-sub {
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     color: var(--color-text-sub);
 }
 
 .calc-form-clean .field-box {
-    margin-bottom: 14px;
+    margin-bottom: 9px;
 }
 
 .calc-form-clean label {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     font-weight: 700;
     color: var(--color-navy);
-    margin-bottom: 6px;
+    margin-bottom: 3px;
 }
 
 .calc-form-clean label i {
@@ -509,12 +512,12 @@ img {
 
 .select-clean {
     width: 100%;
-    height: 44px;
+    height: 38px;
     border: 1.5px solid var(--color-border);
     border-radius: var(--radius-sm);
-    padding: 0 12px;
+    padding: 0 10px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     color: var(--color-text);
     background-color: var(--color-bg-light);
     outline: none;
@@ -531,13 +534,13 @@ img {
     background: var(--color-bg-light);
     border: 1.5px solid var(--color-border);
     border-radius: var(--radius-md);
-    padding: 16px;
+    padding: 10px 14px;
     text-align: center;
-    margin: 18px 0;
+    margin: 10px 0 12px;
 }
 
 .price-output-box .out-title {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 600;
     color: var(--color-text-sub);
     text-transform: uppercase;
@@ -546,20 +549,26 @@ img {
 
 .price-output-box .out-amount {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 2rem;
+    font-size: 1.65rem;
     font-weight: 800;
     color: var(--color-navy);
     line-height: 1.1;
-    margin: 4px 0;
+    margin: 2px 0;
 }
 
 .price-output-box .out-sub {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    font-size: 0.76rem;
+    gap: 4px;
+    font-size: 0.72rem;
     font-weight: 600;
     color: #16A34A;
+}
+
+#btnCallKlimaMaster {
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 0.92rem;
 }
 
 /* ==========================================================================
