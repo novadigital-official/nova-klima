@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const distText = districtSelect.options[districtSelect.selectedIndex].text;
             const finalPrice = totalKlimaPrice.textContent;
 
-            const message = `Merhaba Nova Klima, web siteniz üzerinden ulaştım. Antalya Klima Servis talebim var:\n\n🔧 Servis Türü: ${servText}\n❄️ Kapasite: ${btuText}\n📍 Konum: ${distText}\n💰 En Uygun Ücret: ${finalPrice}\n\nAcil usta yönlendirmenizi rica ederim.`;
+            const message = `Merhaba, AntalyadaKlimaServisi.com.tr üzerinden ulaştım. Antalya klima servis talebim var:\n\n• Servis Türü: ${servText}\n• Kapasite: ${btuText}\n• Konum: ${distText}\n• Tahmini Ücret: ${finalPrice}\n\nEn kısa sürede usta yönlendirmenizi rica ederim.`;
             const waUrl = `https://wa.me/905070871789?text=${encodeURIComponent(message)}`;
 
             window.open(waUrl, '_blank');
