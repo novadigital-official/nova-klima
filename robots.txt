@@ -21,4 +21,4 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://antalyadaklimaservisi.com.tr/sitemap.xml
+Sitemap: https://www.antalyadaklimaservisi.com.tr/sitemap.xml
