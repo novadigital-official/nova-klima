@@ -47,16 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const distText = districtSelect.options[districtSelect.selectedIndex].text;
             const finalPrice = totalKlimaPrice.textContent;
 
-            // Ads Conversion Trigger
-            window.dataLayer.push({
-                event: 'generate_lead',
+            // GA4 / Google Ads Conversion Trigger
+            const leadValue = parseInt(finalPrice.replace(/\D/g, ''), 10) || 1850;
+            gtag('event', 'generate_lead', {
                 conversion_type: 'whatsapp_klima_calc',
                 service_type: servText,
-                estimated_value: finalPrice,
+                value: leadValue,
                 currency: 'TRY'
             });
             if (typeof fbq === 'function') {
-                fbq('track', 'Lead', { content_name: 'Klima Servis Teklifi', value: 1850, currency: 'TRY' });
+                fbq('track', 'Lead', { content_name: 'Klima Servis Teklifi', value: leadValue, currency: 'TRY' });
             }
 
             const message = `Merhaba, AntalyadaKlimaServisi.com.tr üzerinden ulaştım. Antalya klima servis talebim var:\n\n• Servis Türü: ${servText}\n• Kapasite: ${btuText}\n• Konum: ${distText}\n• Tahmini Ücret: ${finalPrice}\n\nEn kısa sürede usta yönlendirmenizi rica ederim.`;
@@ -66,18 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Phone Click Conversion Tracking
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-        link.addEventListener('click', function() {
-            window.dataLayer.push({
-                event: 'contact_phone_click',
-                phone_number: '05070871789',
-                lead_category: 'Klima Telefon'
-            });
-            if (typeof fbq === 'function') {
-                fbq('track', 'Contact', { content_name: 'Phone Call' });
-            }
+    // Phone and WhatsApp link click tracking (event delegation covers all links on the page)
+    document.addEventListener('click', (event) => {
+        const link = event.target.closest && event.target.closest('a[href^="tel:"], a[href*="wa.me/"]');
+        if (!link) return;
+
+        const isPhone = link.getAttribute('href').startsWith('tel:');
+        gtag('event', isPhone ? 'contact_phone_click' : 'contact_whatsapp_click', {
+            lead_category: isPhone ? 'Klima Telefon' : 'Klima WhatsApp',
+            page_path: window.location.pathname,
+            transport_type: 'beacon'
         });
+        if (typeof fbq === 'function') {
+            fbq('track', 'Contact', { content_name: isPhone ? 'Phone Call' : 'WhatsApp' });
+        }
     });
 
 });
